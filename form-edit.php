@@ -61,7 +61,7 @@ if (!is_array($user))
                 É obrigatório inserir uma idade válida.
             </div>
                 <input type="hidden" name="id" value="<?php echo $id ?>">
-                <button type="submit" class="bnt bnt-primary">Alterar</button>
+                <button type="submit" class="btn btn-success">Alterar</button>
             </form>
             </html>
     </div>
