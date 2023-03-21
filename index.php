@@ -20,8 +20,8 @@
         <img class="d-block mx-auto mb-4" src="img/capa.png" alt="" width="600" height="300">
         <p class="lead">Se você deseja adotar um pet, clique no botão abaixo:</p>
         <a class="btn btn-lg btn-success" href="form-add.php" role="button">Entre aqui &raquo;</a>
-        <p class="lead">Exibir pets cadastrados</p>
-        <a class="btn btn-lg btn-success" href="form-add.php" role="button">Entre aqui &raquo;</a>
+        <p class="lead">Para exibir pets cadastrados:</p>
+        <a class="btn btn-lg btn-success" href="exibir.php" role="button">Clique aqui &raquo;</a>
       </div>
     </div>
     <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">

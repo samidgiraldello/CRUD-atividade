@@ -9,9 +9,9 @@ if (empty($id))
     exit;
 }
 $PDO = db_connect();
-$sql = "SELECT name, NomePet, espécie, raça, birthddate FROM  crud WHERE id = :id";
+$sql = "SELECT name, especie, raca, idade FROM pets WHERE id = :id";
 $stmt = $PDO->prepare($sql);
-$stmt->bindParam(':id', $id, PDO::PARAM_INIT);
+$stmt->bindParam(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -31,40 +31,53 @@ if (!is_array($user))
         <script src="bootstrap/js/bootstrap.js"></script>
         <script src="bootstrap/js/bootstrap.js"></script>
     </head>
-    <body>
-    <div class="col-md-8 order-md-1">
-          <h4 class="mb-3">Editar Pet</h4>
-          <form class="needs-validation" novalidate>
-          <div class="row">
-          <div class="col-md-6 mb-3">
-                <label for="primeiroNome">Nome</label>
-                <input type="text" class="form-control" id="primeiroNome" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                É obrigatório inserir um nome válido.
-                </div>
-            <div class="col-md-6 mb-3">
-                <label for="especie">Espécie</label>
-                <input type="text" class="form-control" id="especie" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                É obrigatório inserir uma espécie válida.
-                </div>
-                <div class="col-md-6 mb-3">
-                <label for="raça">Raça</label>
-                <input type="text" class="form-control" id="raça" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                É obrigatório inserir uma raça válida.
-            </div>
-            <div class="col-md-6 mb-3">
-                <label for="idade">Idade</label>
-                <input type="text" class="form-control" id="idade" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                É obrigatório inserir uma idade válida.
-            </div>
-                <input type="hidden" name="id" value="<?php echo $id ?>">
-                <button type="submit" class="btn btn-success">Alterar</button>
-            </form>
-            </html>
+    <body class="bg-light">
+
+<div class="container">
+    <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="img/PETMIAU.png" alt="" width="72" height="72">
+        <h2>Formulário de Adoção</h2>
+        <p class="lead">Edite abaixo os dados do pet</p>
+</div>
+
+<div class="col-md-8 order-md-1">
+  <h4 class="mb-3">Editar Pet</h4>
+  <form class="needs-validation" novalidate action="edit.php" method="post">
+  <div class="row">
+  <div class="col-md-6 mb-3">
+        <label for="primeiroNome">Nome</label>
+        <input type="text" class="form-control" name="name" id="primeiroNome" placeholder="" value="<?php echo $user ['name'];?>" required>
+        <div class="invalid-feedback">
+        É obrigatório inserir um nome válido.
+        </div>
+</div>
+    <div class="col-md-6 mb-3">
+        <label for="especie">Espécie</label>
+        <input type="text" class="form-control" name="especie" id="especie" placeholder="" value="<?php echo $user ['especie'];?>" required>
+        <div class="invalid-feedback">
+        É obrigatório inserir uma espécie válida.
+        </div>
+</div>
+        <div class="col-md-6 mb-3">
+        <label for="raça">Raça</label>
+        <input type="text" class="form-control" name="raca" id="raça" placeholder="" value="<?php echo $user ['raca'];?>" required>
+
+        <div class="invalid-feedback">
+        É obrigatório inserir uma raça válida.
     </div>
-    </body>
+</div>
+    <div class="col-md-6 mb-3">
+        <label for="idade">Idade</label>
+        <input type="text" class="form-control" name="idade" id="idade" placeholder="" value="<?php echo $user ['idade'];?>" required>
+        <div class="invalid-feedback">
+        É obrigatório inserir uma idade válida.
+    </div>
+</div>
+        <input type="hidden" name="id" value="<?php echo $id ?>">
+        <button type="submit" class="btn btn-success">Editar</button>
+</div>
+    </form>
+</div>
+</body>
 
 </html>

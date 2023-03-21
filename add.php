@@ -5,7 +5,6 @@ $name = isset($_POST['name']) ? $_POST['name'] : null;
 $especie = isset($_POST['especie']) ? $_POST['especie']: null;
 $raca = isset($_POST['raca']) ? $_POST['raca']: null;
 $idade = isset($_POST['idade']) ? $_POST['idade']: null;
-$id = isset($_POST['id']) ? $_POST['id']: null;
 
 if (empty($name) || empty($especie) || empty($raca) || empty($idade))
 {
@@ -14,14 +13,13 @@ if (empty($name) || empty($especie) || empty($raca) || empty($idade))
 }
 
 $PDO = db_connect();
-$sql = "UPDATE users SET name = :name, especie = :especie, raca = :raca, idade = :idade";
+$sql = "INSERT INTO pets (name, especie, raca, idade) VALUES (:name, :especie, :raca, :idade)";
 $stmt = $PDO->prepare($sql);
 $stmt->bindParam(':name', $name);
 $stmt->bindParam(':especie', $especie);
 $stmt->bindParam(':raca', $raca);
 $stmt->bindParam(':idade', $idade);
-$stmt->bindParam(':id', $id, PDO::PARAM_INT);
-if (stmt->execute())
+if ($stmt->execute())
 {
     header('Location: index.php');
 }

@@ -7,10 +7,10 @@ if (empty($id))
     exit;
 }
 $PDO = db_connect();
-$sql = "DELETE FROM users WHERE id = :id";
+$sql = "DELETE FROM pets WHERE id = :id";
 $stmt = $PDO->prepare($sql);
 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-IF ($stmt->execute())
+if ($stmt->execute())
 {
     header('Location: index.php');
 }

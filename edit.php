@@ -13,14 +13,14 @@ if (empty($name) || empty($especie) || empty($raca) || empty($idade))
 }
  
 $PDO = db_connect();
-$sql = "UPDATE users SET name = :name, especie = :especie, raca = :raca, idade = :idade";
+$sql = "UPDATE pets SET name = :name, especie = :especie, raca = :raca, idade = :idade WHERE id = :id";
 $stmt = $PDO->prepare($sql);
 $stmt->bindParam(':name', $name);
 $stmt->bindParam(':especie', $especie);
 $stmt->bindParam(':raca', $raca);
 $stmt->bindParam(':idade', $idade);
 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-if (stmt->execute())
+if ($stmt->execute())
 {
     header('Location: index.php');
 }
