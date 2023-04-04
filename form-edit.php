@@ -42,7 +42,7 @@ if (!is_array($user))
 
 <div class="col-md-8 order-md-1">
   <h4 class="mb-3">Editar Pet</h4>
-  <form class="needs-validation" novalidate action="edit.php" method="post">
+  <form class="needs-validation" novalidate action="form-edit.php" method="post">
   <div class="row">
   <div class="col-md-6 mb-3">
         <label for="primeiroNome">Nome</label>
@@ -53,11 +53,17 @@ if (!is_array($user))
 </div>
     <div class="col-md-6 mb-3">
         <label for="especie">Espécie</label>
-        <input type="text" class="form-control" name="especie" id="especie" placeholder="" value="<?php echo $user ['especie'];?>" required>
-        <div class="invalid-feedback">
-        É obrigatório inserir uma espécie válida.
+        <select class="custom-select d-block w-100" name="especie" id="especie" required>
+            <option value="">Escolha uma opção</option>
+            <option value>Canina</option>
+            <option value>Fenina</option>
+</select>
+</div>
+
+<div class= "invalid-feedback">  É obrigatório inserir uma espécie válida.
         </div>
 </div>
+<div class="row">
         <div class="col-md-6 mb-3">
         <label for="raça">Raça</label>
         <input type="text" class="form-control" name="raca" id="raça" placeholder="" value="<?php echo $user ['raca'];?>" required>
@@ -72,6 +78,7 @@ if (!is_array($user))
         <div class="invalid-feedback">
         É obrigatório inserir uma idade válida.
     </div>
+</div>
 </div>
         <input type="hidden" name="id" value="<?php echo $id ?>">
         <button type="submit" class="btn btn-success">Editar</button>

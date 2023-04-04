@@ -35,13 +35,16 @@
                 É obrigatório inserir um nome válido.
                 </div>
 </div>
-            <div class="col-md-6 mb-3">
-                <label for="especie">Espécie</label>
-                <input type="text" class="form-control" name="especie" id="especie" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                É obrigatório inserir uma espécie válida.
-                </div>
+<div class="col-md-6 mb-3">
+        <label for="especie">Espécie</label>
+        <select class="custom-select d-block w-100" name="especie" id="especie" required>
+            <option value="">Escolha uma opção</option>
+            <option value="canina">Canina</option>
+            <option value="felina">Fenina</option>
+</select>
 </div>
+</div>
+<div class="row">
                 <div class="col-md-6 mb-3">
                 <label for="raça">Raça</label>
                 <input type="text" class="form-control" name="raca" id="raça" placeholder="" value="" required>
@@ -49,6 +52,7 @@
                 <div class="invalid-feedback">
                 É obrigatório inserir uma raça válida.
             </div>
+            
 </div>
             <div class="col-md-6 mb-3">
                 <label for="idade">Idade</label>
@@ -56,6 +60,7 @@
                 <div class="invalid-feedback">
                 É obrigatório inserir uma idade válida.
             </div>
+</div>
 </div>
                 <input type="hidden" name="id" value="<?php echo $id ?>">
                 <button type="submit" class="btn btn-success">Adicionar</button>
