@@ -8,20 +8,26 @@
     <link rel="icon" href="../../../../favicon.ico">
 
     <title>PetMiAu</title>
-
-    <!-- Principal CSS do Bootstrap -->
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-  </head>
+    <link href="estilo.css" rel="stylesheet">
+    <script src="bootstrap/js/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="bootstrap/js/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(function(){
+          $("#menu").load("navbar.html");
+        });
+      });
+    </script>
+
+</head>
 
   <body>
     <div class="container">
       <div class="jumbotron mt-3">
         <h1>Abrigo de pets</h1>
         <img class="d-block mx-auto mb-4" src="img/capa.png" alt="" width="600" height="300">
-        <p class="lead">Se você deseja adotar um pet, clique no botão abaixo:</p>
-        <a class="btn btn-lg btn-success" href="form-add.php" role="button">Entre aqui &raquo;</a>
-        <p class="lead">Para exibir pets cadastrados:</p>
-        <a class="btn btn-lg btn-success" href="exibir.php" role="button">Clique aqui &raquo;</a>
       </div>
     </div>
     <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
