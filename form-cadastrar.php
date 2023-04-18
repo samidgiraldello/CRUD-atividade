@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Cadastro Pet</title>
+    <title>Cadastro Espécie</title>
 
     <!-- Principal CSS do Bootstrap -->
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -33,46 +32,22 @@
         <div class="container">
             <div class="py-5 text-center">
                 <img class="d-block mx-auto mb-4" src="img/PETMIAU.png" alt="" width="72" height="72">
-                <h2>Formulário de Adoção</h2>
-                <p class="lead">Cadastre abaixo os dados do pet</p>
+                <h2>Formulário de Espécie</h2>
+                <p class="lead">Cadastre abaixo a espécie do pet</p>
       </div>
 
       <div class="col-md-8 order-md-1">
-          <h4 class="mb-3">Adicionar Pet</h4>
-          <form class="needs-validation" novalidate action="add.php" method="post">
+          <h4 class="mb-3">Adicionar Espécie</h4>
+          <form class="needs-validation" novalidate action="cadastrarespecie.php" method="post">
           <div class="row">
           <div class="col-md-6 mb-3">
-                <label for="primeiroNome">Nome</label>
-                <input type="text" class="form-control" name="name" id="primeiroNome" placeholder="" value="" required>
+                <label for="primeiroNome">Nome da Espécie</label>
+                <input type="text" class="form-control" name="nomeEspecie" id="primeiroNome" placeholder="" value="" required>
                 <div class="invalid-feedback">
                 É obrigatório inserir um nome válido.
                 </div>
 </div>
-<div class="col-md-6 mb-3">
-        <label for="especie">Espécie</label>
-        <select class="custom-select d-block w-100" name="especie" id="especie" required>
-            <option value="">Escolha uma opção</option>
-            <option value="canina">Canina</option>
-            <option value="felina">Fenina</option>
-</select>
-</div>
-</div>
-<div class="row">
-                <div class="col-md-6 mb-3">
-                <label for="raça">Raça</label>
-                <input type="text" class="form-control" name="raca" id="raça" placeholder="" value="" required>
 
-                <div class="invalid-feedback">
-                É obrigatório inserir uma raça válida.
-            </div>
-            
-</div>
-            <div class="col-md-6 mb-3">
-                <label for="idade">Idade</label>
-                <input type="text" class="form-control" name="idade" id="idade" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                É obrigatório inserir uma idade válida.
-            </div>
 </div>
 </div>
                 <input type="hidden" name="id" value="<?php echo $id ?>">

@@ -30,8 +30,21 @@ if (!is_array($user))
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
         <script src="bootstrap/js/bootstrap.js"></script>
         <script src="bootstrap/js/bootstrap.js"></script>
+        <script src="bootstrap/js/popper.min.js"></script>
+         <script src="bootstrap/js/bootstrap.js"></script>
+        <script src="bootstrap/js/jquery.min.js"></script>
+         <script type="text/javascript">
+         $(document).ready(function(){
+              $(function(){
+             $("#menu").load("navbar.html");
+        });
+      });
+    </script>
     </head>
     <body class="bg-light">
+    <div class="container">
+      <div id="menu"></div>
+    </div>
 
 <div class="container">
     <div class="py-5 text-center">
